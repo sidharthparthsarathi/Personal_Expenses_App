@@ -236,10 +236,11 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   void initState() {
         WidgetsBinding.instance.addObserver(this);
     super.initState();
-    writeContent();
+    // writeContent();
     readContent().then((String value) {
       setState(() {
         data = value;
+        transaction=Transaction.decodeTransactions(data);
         print('This Is My String'+data+'In Set State Line-242');
       });
     });

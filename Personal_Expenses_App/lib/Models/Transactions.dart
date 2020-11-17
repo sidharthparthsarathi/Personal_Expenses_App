@@ -10,8 +10,8 @@ class Transaction
     return Transaction(
       id: jsonData['id'],
       title: jsonData['title'],
-      amount: jsonData['amount'],
-      date: jsonData['date'],
+      amount: double.parse(jsonData['amount']),
+      date: DateTime.parse(jsonData['date']),
     );
   }
   static Map<String, dynamic> toMap(Transaction transaction) => {
